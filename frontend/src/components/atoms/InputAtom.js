@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const InputAtom = ({ inputType, inputPlaceholder, inputLabel }) => {
+const InputAtom = ({ className, inputType, inputPlaceholder, inputLabel }) => {
   return (
     <input
-      className="form-control me-2"
+      className={className}
       type={inputType}
       aria-label={inputLabel}
       placeholder={inputPlaceholder}
@@ -13,12 +13,14 @@ const InputAtom = ({ inputType, inputPlaceholder, inputLabel }) => {
 };
 
 InputAtom.defaultProps = {
+  className: "",
   inputType: "search",
   inputPlaceholder: "",
   inputLabel: "Search",
 };
 
 InputAtom.propTypes = {
+  className: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
   inputPlaceholder: PropTypes.string,
   inputLabel: PropTypes.string.isRequired,
