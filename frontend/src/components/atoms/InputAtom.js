@@ -15,7 +15,7 @@ const InputAtom = ({ className, inputType, inputPlaceholder, inputLabel }) => {
 InputAtom.defaultProps = {
   className: "",
   inputType: "search",
-  inputPlaceholder: "",
+  inputPlaceholder: "Enter your search...",
   inputLabel: "Search",
 };
 

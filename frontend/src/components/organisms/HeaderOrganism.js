@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import SearchFormMolecule from "../molecules/SearchFormMolecule";
 import NavLinkMolecule from "../molecules/NavLinkMolecule";
 import LinkAtom from "../atoms/LinkAtom";
-import ToggleButtonAtom from "../atoms/ToggleButtonAtom";
+import NavbarTogglerAtom from "../atoms/NavbarTogglerAtom.js";
 
-const HeaderOrganism = ({ brand, homePath, registrationPath, aboutPath }) => {
+const HeaderOrganism = ({ brand, homePath, aboutPath }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <LinkAtom brand={brand} path={homePath} />
-        <ToggleButtonAtom type="button" />
+        <NavbarTogglerAtom type="button" />
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -48,16 +48,21 @@ const HeaderOrganism = ({ brand, homePath, registrationPath, aboutPath }) => {
     </nav>
   );
 };
+
 HeaderOrganism.defaultProps = {
   brand: "Unknown",
   homePath: "/",
   registrationPath: "/",
   aboutPath: "/",
+  logoSrc: "",
+  logoAlt: "",
 };
+
 HeaderOrganism.propTypes = {
   brand: PropTypes.string.isRequired,
   homePath: PropTypes.string.isRequired,
   registrationPath: PropTypes.string.isRequired,
   aboutPath: PropTypes.string.isRequired,
 };
+
 export default HeaderOrganism;

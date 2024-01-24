@@ -18,7 +18,7 @@ ButtonAtom.defaultProps = {
 ButtonAtom.propTypes = {
   className: PropTypes.string.isRequired,
   buttonType: PropTypes.string.isRequired,
-  buttonName: PropTypes.string,
+  buttonName: PropTypes.string.isRequired,
 };
 
 export default ButtonAtom;

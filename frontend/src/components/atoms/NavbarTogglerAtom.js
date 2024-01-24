@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ToggleButtonAtom = ({ type, className, label }) => {
+const NavbarTogglerAtom = ({ type, className, label }) => {
   return (
     <button
       type={type}
@@ -18,16 +18,16 @@ const ToggleButtonAtom = ({ type, className, label }) => {
   );
 };
 
-ToggleButtonAtom.defaultTypes = {
+NavbarTogglerAtom.defaultProps = {
   type: "button",
   className: "navbar-toggler",
   label: "Toggle navigation",
 };
 
-ToggleButtonAtom.prototypes = {
+NavbarTogglerAtom.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 };
 
-export default ToggleButtonAtom;
+export default NavbarTogglerAtom;

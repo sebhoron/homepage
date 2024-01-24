@@ -13,7 +13,7 @@ const LinkAtom = ({ path, className, text }) => {
 LinkAtom.defaultProps = {
   path: "/",
   className: "",
-  text: "",
+  text: "Link",
 };
 
 LinkAtom.propTypes = {

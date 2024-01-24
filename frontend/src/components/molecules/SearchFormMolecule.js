@@ -1,7 +1,8 @@
 import React from "react";
-import InputAtom from "../atoms/InputAtom";
-import SubmitButtonAtom from "../atoms/SubmitButtonAtom";
 import PropTypes from "prop-types";
+
+import InputAtom from "../atoms/InputAtom.js";
+import ButtonAtom from "../atoms/ButtonAtom.js";
 
 const SearchFormMolecule = ({
   inputType,
@@ -17,7 +18,7 @@ const SearchFormMolecule = ({
         inputPlaceholder={inputPlaceholder}
         inputLabel={inputLabel}
       />
-      <SubmitButtonAtom buttonType={buttonType} buttonName={buttonName} />
+      <ButtonAtom buttonType={buttonType} buttonName={buttonName} />
     </form>
   );
 };
