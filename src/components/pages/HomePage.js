@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HomeTemplate from "../templates/HomeTemplate.js";
+import HomePageTemplate from "../templates/HomePageTemplate.js";
 
-const HomePage = ({}) => {
+const HomePage = () => {
   return (
-    <div className="container">
-      <HomeTemplate />
+    <div>
+      <HomePageTemplate />
     </div>
   );
 };

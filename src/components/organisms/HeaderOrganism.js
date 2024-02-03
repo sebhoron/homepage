@@ -5,7 +5,13 @@ import NavLinkMolecule from "../molecules/NavLinkMolecule";
 import LinkAtom from "../atoms/LinkAtom";
 import NavbarTogglerAtom from "../atoms/NavbarTogglerAtom.js";
 
-const HeaderOrganism = ({ brand, homePath, aboutPath }) => {
+const HeaderOrganism = ({
+  brand,
+  homePath,
+  codingPath,
+  musicPath,
+  travelPath,
+}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -22,14 +28,14 @@ const HeaderOrganism = ({ brand, homePath, aboutPath }) => {
             </li>
             <li className="nav-item">
               <NavLinkMolecule
-                path={registrationPath}
+                path={codingPath}
                 iconName="fa fa-plus mx-1"
                 name="Register"
               />
             </li>
             <li className="nav-item">
               <NavLinkMolecule
-                path={aboutPath}
+                path={musicPath}
                 iconName="fa fa-question mx-1"
                 name="About Us"
               />
