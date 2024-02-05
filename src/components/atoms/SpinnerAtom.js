@@ -1,7 +1,9 @@
-import Spinner from "react-bootstrap/Spinner";
-
 function SpinnerAtom() {
-  return <Spinner animation="border" />;
+  return (
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  );
 }
 
 export default SpinnerAtom;
