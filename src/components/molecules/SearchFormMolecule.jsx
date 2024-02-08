@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import InputAtom from "../atoms/InputAtom.js";
-import ButtonAtom from "../atoms/ButtonAtom.js";
+import InputAtom from "../atoms/InputAtom.jsx";
+import ButtonAtom from "../atoms/ButtonAtom.jsx";
 
 const SearchFormMolecule = ({
   inputType,
