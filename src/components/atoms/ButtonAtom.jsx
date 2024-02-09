@@ -9,16 +9,16 @@ const ButtonAtom = ({ className, buttonType, buttonName }) => {
   );
 };
 
-ButtonAtom.defaultProps = {
-  className: "",
-  buttonType: "",
-  buttonName: "",
-};
-
 ButtonAtom.propTypes = {
   className: PropTypes.string.isRequired,
   buttonType: PropTypes.string.isRequired,
   buttonName: PropTypes.string.isRequired,
+};
+
+ButtonAtom.defaultProps = {
+  className: "",
+  buttonType: "",
+  buttonName: "",
 };
 
 export default ButtonAtom;

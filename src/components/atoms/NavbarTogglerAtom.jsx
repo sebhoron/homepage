@@ -18,16 +18,16 @@ const NavbarTogglerAtom = ({ type, className, label }) => {
   );
 };
 
-NavbarTogglerAtom.defaultProps = {
-  type: "button",
-  className: "navbar-toggler",
-  label: "Toggle navigation",
-};
-
 NavbarTogglerAtom.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+};
+
+NavbarTogglerAtom.defaultProps = {
+  type: "button",
+  className: "navbar-toggler",
+  label: "Toggle navigation",
 };
 
 export default NavbarTogglerAtom;

@@ -1,20 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const MainContentOrganism = ({ articles, featuredArticle, sidebarData }) => {
+const MainContentOrganism = () => {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-8"></div>
-      </div>
+    <div className="main-content">
+      <h2>Main Content Goes Here</h2>
+      <p>This is an example MainContentOrganism component.</p>
     </div>
   );
-};
-
-MainContentOrganism.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.object).isRequired,
-  featuredArticle: PropTypes.object,
-  sidebarData: PropTypes.object.isRequired,
 };
 
 export default MainContentOrganism;

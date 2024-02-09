@@ -14,16 +14,16 @@ const YouTubeIFrameAtom = ({ videoId, width, height }) => {
   );
 };
 
-YouTubeIFrameAtom.defaultProps = {
-  videoId: "watch?v=LLFhKaqnWwk",
-  width: "560",
-  height: "315",
-};
-
 YouTubeIFrameAtom.propTypes = {
   videoId: PropTypes.string.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
+};
+
+YouTubeIFrameAtom.defaultProps = {
+  videoId: "watch?v=LLFhKaqnWwk",
+  width: "560",
+  height: "315",
 };
 
 export default YouTubeIFrameAtom;

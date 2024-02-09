@@ -1,14 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import HeaderOrganism from "../organisms/HeaderOrganism.js";
-import MainContentOrganism from "../organisms/MainContentOrganism.js";
-import FooterOrganism from "../organisms/FooterOrganism.js";
+import HeaderOrganism from "../organisms/Header/HeaderOrganism.jsx";
+import SubHeaderOrganism from "../organisms/SubHeaderOrganism.jsx";
+import MainContentOrganism from "../organisms/MainContentOrganism.jsx";
+import FooterOrganism from "../organisms/FooterOrganism.jsx";
 
-function HomePageTemplate() {
+function HomePageTemplate({
+  headerImageSrc,
+  headerImageAlt,
+  homePath,
+  projectPath,
+  musicPath,
+  travelPath,
+  subHeaderImageSrc,
+  subHeaderImageAlt,
+  fullName,
+  professions,
+}) {
   return (
     <div>
-      <HeaderOrganism />
+      <HeaderOrganism
+        imageSrc={headerImageSrc}
+        imageAlt={headerImageAlt}
+        homePath={homePath}
+        projectPath={projectPath}
+        musicPath={musicPath}
+        travelPath={travelPath}
+      />
+      <SubHeaderOrganism
+        imageSrc={subHeaderImageSrc}
+        imageAlt={subHeaderImageAlt}
+        fullName={fullName}
+        professions={professions}
+      />
       <MainContentOrganism />
       <FooterOrganism />
     </div>

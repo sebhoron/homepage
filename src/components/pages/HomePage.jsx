@@ -1,17 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HomePageTemplate from "../templates/HomePageTemplate.js";
+import HomePageTemplate from "../templates/HomePageTemplate.jsx";
 
-const HomePage = () => {
+const HomePage = ({
+  headerImageSrc,
+  headerImageAlt,
+  homePath,
+  projectPath,
+  musicPath,
+  travelPath,
+  subHeaderImageSrc,
+  subHeaderImageAlt,
+  fullName,
+  professions,
+}) => {
   return (
     <div>
-      <HomePageTemplate />
+      <HomePageTemplate
+        headerImageSrc={headerImageSrc}
+        headerImageAlt={headerImageAlt}
+        homePath={homePath}
+        projectPath={projectPath}
+        musicPath={musicPath}
+        travelPath={travelPath}
+        subHeaderImageSrc={subHeaderImageSrc}
+        subHeaderImageAlt={subHeaderImageAlt}
+        fullName={fullName}
+        professions={professions}
+      />
     </div>
   );
 };
 
-HomePage.defaultProps = {};
-
 HomePage.propTypes = {};
+
+HomePage.defaultProps = {};
 
 export default HomePage;

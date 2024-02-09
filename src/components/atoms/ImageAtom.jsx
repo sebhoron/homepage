@@ -1,36 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import LinkAtom from "../atoms/LinkAtom.jsx";
-import ImageAtom from "../atoms/ImageAtom.jsx";
 
-function ImageLinkMolecule({
-  linkPath,
-  linkClassName,
-  imageSrc,
-  imageAlt,
-  imageClassName,
-}) {
-  return (
-    <LinkAtom path={linkPath} className={linkClassName} text="">
-      <ImageAtom src={imageSrc} alt={imageAlt} className={imageClassName} />
-    </LinkAtom>
-  );
+function ImageAtom({ src, alt, className }) {
+  return <img src={src} alt={alt} className={className} />;
 }
 
-ImageLinkMolecule.defaultProps = {
-  linkPath: "/",
-  linkClassName: "",
-  imageSrc: "",
-  imageAlt: "",
-  imageClassName: "",
+ImageAtom.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
-ImageLinkMolecule.propTypes = {
-  linkPath: PropTypes.string.isRequired,
-  linkClassName: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
-  imageClassName: PropTypes.string,
+ImageAtom.defaultProps = {
+  src: "",
+  alt: "Not Found",
+  className: "img-fluid",
 };
 
-export default ImageLinkMolecule;
+export default ImageAtom;
