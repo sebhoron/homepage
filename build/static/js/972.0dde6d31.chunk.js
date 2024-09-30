@@ -1,1 +1,0 @@
-(self.webpackChunkmy_homepage=self.webpackChunkmy_homepage||[]).push([[972],{972:()=>{}}]);
