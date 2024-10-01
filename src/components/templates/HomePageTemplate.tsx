@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeaderOrganism } from "../organisms/Header/HeaderOrganism.tsx";
+import { HeaderOrganism } from "../organisms/header/HeaderOrganism.tsx";
 import { MainContentOrganism } from "../organisms/MainContentOrganism.tsx";
 import { Footer } from "../organisms/FooterOrganism.tsx";
 import { SubHeaderOrganism } from "../organisms/SubHeaderOrganism.tsx";

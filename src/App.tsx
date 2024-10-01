@@ -4,6 +4,7 @@ import { lazily } from 'react-lazily';
 import "./App.css"
 
 import { SpinnerAtom } from "./components/atoms/SpinnerAtom.tsx";
+import { ThemeWrapper } from "./components/ThemeWrapper.tsx";
 
 const { HomePage } = lazily(() => import("./components/pages/HomePage.tsx"));
 // const { ProjectPage } = lazily(() => import("./components/pages/ProjectPage.jsx"));
@@ -12,7 +13,7 @@ const { HomePage } = lazily(() => import("./components/pages/HomePage.tsx"));
 
 const professions = ["Software Engineering", "Data Science"];
 
-export const App = () => {
+function App() {
   const [open] = React.useReducer(() => true, false);
 
   return (
@@ -26,18 +27,20 @@ export const App = () => {
             <Route
               path="/"
               element={
-                <HomePage
-                  headerImageSrc="public\main-logo.png"
-                  headerImageAlt="logo"
-                  homePath="/"
-                  projectPath="/projects"
-                  musicPath="/music"
-                  travelPath="/travel"
-                  subHeaderImageSrc=""
-                  subHeaderImageAlt=""
-                  fullName="Sebastian Horon"
-                  professions={professions}
-                />
+                <ThemeWrapper>
+                  <HomePage
+                    headerImageSrc="public\main-logo.png"
+                    headerImageAlt="logo"
+                    homePath="/"
+                    projectPath="/projects"
+                    musicPath="/music"
+                    travelPath="/travel"
+                    subHeaderImageSrc=""
+                    subHeaderImageAlt=""
+                    fullName="Sebastian Horon"
+                    professions={professions}
+                  />
+                </ThemeWrapper>
               }
             />
             {/* <Route path="/projects" element={<ProjectPage />} />
@@ -49,3 +52,5 @@ export const App = () => {
     </>
   );
 };
+
+export default App
