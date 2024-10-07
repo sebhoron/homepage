@@ -1,6 +1,7 @@
 {
   "name": "my-homepage",
   "private": false,
+  "homepage": "https://sebhoron.github.io/react-atomic-example/",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
