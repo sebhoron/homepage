@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -12,7 +12,7 @@ import { SpinnerAtom } from "./components/atoms/SpinnerAtom";
 import { Header } from "./components/organisms/Header/HeaderOrganism";
 import { HomePage } from "./components/pages/HomePage/HomePage";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<HomePage />}>
       <Route path="portfolio" lazy={() => import("./components/pages/PortfolioPage")} />
@@ -26,8 +26,8 @@ export default function App() {
       <Header />
       <ThemeProvider>
         <RouterProvider
-          router={router}
           fallbackElement={<SpinnerAtom />}
+          router={router}
         />
       </ThemeProvider>
     </div>
