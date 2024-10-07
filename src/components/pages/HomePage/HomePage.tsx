@@ -58,7 +58,7 @@ export function HomePage() {
 
           <div className='video-link'>
             <div className='link'>
-              <a href='https://youtu.be/m4MDt7UUu1w?si=MTugFpitro7vF1t5'>
+              <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>
                 <FaPlay />
               </a>
             </div>
