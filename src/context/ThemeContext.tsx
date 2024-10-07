@@ -1,17 +1,37 @@
-import { createContext, useState } from 'react';
-import { Theme, ThemeContextType } from '../@types/theme';
+import { createContext, useEffect, useState, ReactNode } from 'react';
 
-type Props = {
-	children: React.ReactNode;
+type ThemeContextType = 'light' | 'dark';
+
+interface ThemeContextProps {
+	theme: ThemeContextType;
+	toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextType | null>(null);
+export const ThemeContext = createContext<ThemeContextProps>({
+	theme: 'light',
+	toggleTheme: () => { },
+});
 
-export const ThemeProvider: React.FC<Props> = ({ children }) => {
-	const [themeMode, setThemeMode] = useState<Theme>('light');
+interface ThemeProviderProps {
+	children: ReactNode;
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+	const [theme, setTheme] = useState<ThemeContextType>(() => {
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	});
+
+	const toggleTheme = () => {
+		setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+	};
+
+	useEffect(() => {
+		const body = document.body;
+		body.className = theme === 'dark' ? 'dark-theme' : 'light-theme';
+	}, [theme]);
 
 	return (
-		<ThemeContext.Provider value={{ theme: themeMode, changeTheme: setThemeMode }}>
+		<ThemeContext.Provider value={{ theme, toggleTheme }}>
 			{children}
 		</ThemeContext.Provider>
 	);

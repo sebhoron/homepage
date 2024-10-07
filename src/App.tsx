@@ -1,56 +1,35 @@
-import React, { Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { lazily } from 'react-lazily';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
 import "./App.css"
 
-import { SpinnerAtom } from "./components/atoms/SpinnerAtom.tsx";
-import { ThemeWrapper } from "./components/ThemeWrapper.tsx";
+import { ThemeProvider } from "./context/ThemeContext";
+import { SpinnerAtom } from "./components/atoms/SpinnerAtom";
+import { Header } from "./components/organisms/Header/HeaderOrganism";
+import { HomePage } from "./components/pages/HomePage/HomePage";
 
-const { HomePage } = lazily(() => import("./components/pages/HomePage.tsx"));
-// const { ProjectPage } = lazily(() => import("./components/pages/ProjectPage.jsx"));
-// const { MusicPage } = lazily(() => import("./components/pages/MusicPage.js"));
-// const { TravelPage } = lazily(() => import("./components/pages/TravelPage.jsx"));
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<HomePage />}>
+      <Route path="portfolio" lazy={() => import("./components/pages/PortfolioPage")} />
+    </Route>
+  )
+);
 
-const professions = ["Software Engineering", "Data Science"];
-
-function App() {
-  const [open] = React.useReducer(() => true, false);
-
+export default function App() {
   return (
-    <>
-      {open ? (
-        <Suspense fallback={<SpinnerAtom />}>
-        </Suspense>
-      ) : (
-        <Router>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ThemeWrapper>
-                  <HomePage
-                    headerImageSrc="public\main-logo.png"
-                    headerImageAlt="logo"
-                    homePath="/"
-                    projectPath="/projects"
-                    musicPath="/music"
-                    travelPath="/travel"
-                    subHeaderImageSrc=""
-                    subHeaderImageAlt=""
-                    fullName="Sebastian Horon"
-                    professions={professions}
-                  />
-                </ThemeWrapper>
-              }
-            />
-            {/* <Route path="/projects" element={<ProjectPage />} />
-            <Route path="/music" element={<MusicPage />} />
-            <Route path="/travel" element={<TravelPage />} /> */}
-          </Routes>
-        </Router>
-      )}
-    </>
-  );
-};
-
-export default App
+    <div className='app'>
+      <Header />
+      <ThemeProvider>
+        <RouterProvider
+          router={router}
+          fallbackElement={<SpinnerAtom />}
+        />
+      </ThemeProvider>
+    </div>
+  )
+}
