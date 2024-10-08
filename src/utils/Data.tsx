@@ -1,6 +1,8 @@
 import { IconType } from 'react-icons';
-import { RiStackLine } from 'react-icons/ri';
+import { DiStreamline } from "react-icons/di";
 import { FaCode } from 'react-icons/fa';
+import { RiRobot2Line } from "react-icons/ri";
+import { IoIosCloudOutline } from "react-icons/io";
 
 interface Card {
 	icon: IconType;
@@ -10,47 +12,43 @@ interface Card {
 
 export const cards: Card[] = [
 	{
-		icon: RiStackLine,
-		title: 'UI/UX Design',
-		features: [
-			'Landing Pages',
-			'User Flow',
-			'PRototyping',
-			'Wireframing',
-			'Mobile App Design',
-		],
-	},
-	{
 		icon: FaCode,
-		title: 'Development',
+		title: 'Full Stack Development',
 		features: [
-			'Frontend development',
-			'Backend development',
-			'Html, CSS',
-			'JavaScript',
-			'Python',
+			'Front End: React, TypeScript',
+			'Back End: Java, Python',
+			'API Development',
+			'Unit Testing',
 		],
 	},
 	{
-		icon: FaCode,
-		title: 'Development',
+		icon: RiRobot2Line,
+		title: 'AI Engineering',
 		features: [
-			'Frontend development',
-			'Backend development',
-			'Html, CSS',
-			'JavaScript',
-			'Python',
+			'Azure OpenAI & Amazon Bedrock',
+			'LangChain & Haystack',
+			'Advanced Prompt Engineering',
+			'Hallucination Handling',
 		],
 	},
 	{
-		icon: RiStackLine,
-		title: 'UI/UX Design',
+		icon: IoIosCloudOutline,
+		title: 'Cloud Architecture',
 		features: [
-			'Landing Pages',
-			'User Flow',
-			'PRototyping',
-			'Wireframing',
-			'Mobile App Design',
+			'AWS & Azure Services',
+			'CI/CD with Jenkins',
+			'Microservice Architecture',
+			'Containerization with Docker',
+		],
+	},
+	{
+		icon: DiStreamline,
+		title: 'Data Engineering',
+		features: [
+			'SQL: PostgreSQL & MySQL',
+			'NoSQL: MongoDB & Azure Storage',
+			'Vector Databases',
+			'AWS S3 & DynamoDB',
 		],
 	},
 ];

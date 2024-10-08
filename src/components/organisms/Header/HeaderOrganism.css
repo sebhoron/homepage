@@ -1,6 +1,6 @@
 .nav {
   height: 80px;
-  background: var(--nav-bg);
+  background: #252734;
   width: 100%;
   position: fixed;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);

@@ -1,5 +1,7 @@
 .home {
   padding-top: 120px;
+  max-width: 1060px;
+  width: 100%;
 }
 
 .hero-section {

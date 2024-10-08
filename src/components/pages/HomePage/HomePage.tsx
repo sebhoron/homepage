@@ -1,6 +1,7 @@
-import { FaFacebookF, FaPlay } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import { TiSocialLinkedin, TiSocialInstagram } from 'react-icons/ti';
+import { FaCode, FaPlay } from 'react-icons/fa';
+import { DiStreamline } from "react-icons/di";
+import { RiRobot2Line } from "react-icons/ri";
+import { IoIosCloudOutline } from "react-icons/io";
 import { v4 as uuid } from 'uuid';
 import { useEffect, useRef } from 'react';
 
@@ -49,7 +50,7 @@ export function HomePage() {
           </div>
           <div className='hero-section__paragraph'>
             <h3>
-              Full Stack Developer <br /> Specialised in Java, Python, TypeScript and React
+              Full Stack Developer <br /> Java, Python, TypeScript and React
             </h3>
           </div>
           <a href='/resume.pdf' download='resume.pdf' className='button'>
@@ -71,16 +72,16 @@ export function HomePage() {
             <div className='hero-section__image-half-round-shape'></div>
             <div className='social-links'>
               <a href=''>
-                <FaFacebookF />
+                <FaCode />
               </a>
               <a href=''>
-                <FaXTwitter />
+                <RiRobot2Line />
               </a>
               <a href=''>
-                <TiSocialLinkedin />
+                <IoIosCloudOutline />
               </a>
               <a href=''>
-                <TiSocialInstagram />
+                <DiStreamline />
               </a>
             </div>
           </div>
@@ -88,8 +89,7 @@ export function HomePage() {
       </section>
 
       <section className='services' id='services'>
-        <h3 className='section__label'>My Services</h3>
-        <h2 className='section__title'>Services Provided to my clients.</h2>
+        <h2 className='section__title'>My Services</h2>
         <div className='cards'>
           {cards?.map((card) => (
             <Card
@@ -104,40 +104,35 @@ export function HomePage() {
 
       <section className='skill' id='skills' ref={skillRef}>
         <div className='skill__left'>
-          <h3 className='section__label'>My Skills</h3>
-          <h2 className='section__title'>My Specials skills are</h2>
-          <a href='/resume.pdf' download={'resume.pdf'} className='button'>
-            Get Resume
-          </a>
+          <h2 className='section__title'>My Skills</h2>
         </div>
         <div className='skill__right'>
           <div className='skill__wrapper'>
             <div className='skill__tag'>Development</div>
             <div className='skill__box'>
-              <div className='skill__progress-line' data-width='75'></div>
-              <div className='skill__percentage'>75%</div>
+              <div className='skill__progress-line' data-width='95'></div>
+              <div className='skill__percentage'>95%</div>
             </div>
           </div>
           <div className='skill__wrapper'>
-            <div className='skill__tag'>Design</div>
+            <div className='skill__tag'>AI Engineering</div>
             <div className='skill__box'>
-              <div className='skill__progress-line' data-width='85'></div>
-              <div className='skill__percentage'>85%</div>
+              <div className='skill__progress-line' data-width='90'></div>
+              <div className='skill__percentage'>90%</div>
             </div>
           </div>
           <div className='skill__wrapper'>
             <div className='skill__tag'>Cloud</div>
             <div className='skill__box'>
-              <div className='skill__progress-line' data-width='95'></div>
-              <div className='skill__percentage'>95%</div>
+              <div className='skill__progress-line' data-width='85'></div>
+              <div className='skill__percentage'>85%</div>
             </div>
           </div>
         </div>
       </section>
 
       <section className='portfolio' id='portfolio'>
-        <h3 className='section__label'>My Portfolio</h3>
-        <h2 className='section__title'>My Complete Projects</h2>
+        <h2 className='section__title'>My Portfolio</h2>
 
         <div className='portfolio__grid'>
           {/* <div className='portfolio__card'>
@@ -147,68 +142,9 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className='testimonials' id='testimonials'>
-        <h3 className='section__label'>Testimonials</h3>
-        <h2 className=' section__title'>Satisfied Clients Say</h2>
-        <div className='testimonials__wrapper'>
-
-          <div className='testimonials__card'>
-            <div className='testimonials__text'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus, enim.
-            </div>
-            <div className='testimonials__author'>Blake</div>
-            <div className='testimonials__author-title'>
-              CEO Carrington Atlantic
-            </div>
-          </div>
-
-          <div className='testimonials__card'>
-            <div className='testimonials__text'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus, enim.
-            </div>
-            <div className='testimonials__author'>Fallon</div>
-            <div className='testimonials__author-title'>
-              CEO Fallon Unlimited
-            </div>
-          </div>
-
-          <div className='testimonials__card'>
-            <div className='testimonials__text'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus, enim.
-            </div>
-            <div className='testimonials__author'>Sam</div>
-            <div className='testimonials__author-title'>CEO Van Kirk</div>
-          </div>
-
-          <div className='testimonials__card'>
-            <div className='testimonials__text'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus, enim.
-            </div>
-            <div className='testimonials__author'>Steven</div>
-            <div className='testimonials__author-title'>
-              CEO carrington foundation
-            </div>
-          </div>
-
-          <div className='testimonials__card'>
-            <div className='testimonials__text'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Voluptatibus, enim.
-            </div>
-            <div className='testimonials__author'>Steve</div>
-            <div className='testimonials__author-title'>CEO Dan Joe</div>
-          </div>
-
-        </div>
-      </section>
 
       <div className='contact' id='contact'>
-        <h3 className='section__label'>Contact</h3>
-        <h2 className=' section__title'>Connect with us</h2>
+        <h2 className=' section__title'>Connect</h2>
 
         <Contact />
       </div>
