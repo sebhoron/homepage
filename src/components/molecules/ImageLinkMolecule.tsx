@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { LinkAtom } from '../atoms/LinkAtom.tsx';
 import { ImageAtom } from '../atoms/ImageAtom.tsx';
 
 type Props = {
@@ -19,12 +19,8 @@ export const ImageLinkMolecule: React.FC<Props> = ({
   imageClassName
 }) => {
   return (
-    <LinkAtom
-      path={linkPath}
-      className={linkClassName}
-      text={
-        <ImageAtom src={imageSrc} alt={imageAlt} className={imageClassName} />
-      }
-    />
+    <Link to={linkPath} className={linkClassName}>
+      <ImageAtom src={imageSrc} alt={imageAlt} className={imageClassName} />
+    </Link>
   );
 };

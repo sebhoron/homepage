@@ -1,14 +1,25 @@
 import { createContext, useEffect, useState, ReactNode } from 'react';
 
-type ThemeContextType = 'light' | 'dark';
+type ThemeName = 'light' | 'dark';
+
+export const Themes = {
+	light: {
+		foreground: '#334252',
+		background: '#FAFAFA',
+	},
+	dark: {
+		foreground: '#FAFAFA',
+		background: '#334252',
+	},
+};
 
 interface ThemeContextProps {
-	theme: ThemeContextType;
+	theme: ThemeName;
 	toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-	theme: 'light',
+	theme: 'dark',
 	toggleTheme: () => { },
 });
 
@@ -17,17 +28,22 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-	const [theme, setTheme] = useState<ThemeContextType>(() => {
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	const [theme, setTheme] = useState<ThemeName>(() => {
+		const savedTheme = localStorage.getItem('theme') as ThemeName | null;
+		return savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 	});
 
 	const toggleTheme = () => {
-		setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+		setTheme((prevTheme) => {
+			const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
+			localStorage.setItem('theme', newTheme);
+			return newTheme;
+		});
 	};
 
 	useEffect(() => {
-		const body = document.body;
-		body.className = theme === 'dark' ? 'dark-theme' : 'light-theme';
+		document.documentElement.setAttribute('data-theme', theme);
+		document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#334252' : '#FAFAFA');
 	}, [theme]);
 
 	return (

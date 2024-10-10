@@ -1,5 +1,5 @@
-export function Component() {
+export function PortfolioPage() {
   return (
-    <div className='container home'></div>
+    <h2 className='container home'>ToDo</h2>
   );
 };
