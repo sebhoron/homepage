@@ -3,24 +3,46 @@
   line-height: 1.5;
   font-weight: 400;
   text-decoration: none;
-  color-scheme: light dark;
-  background-color: #334252;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --background-color: #334252;
-  --text-color: #FAFAFA;
   --primary-font-family: 'Poppins', sans-serif;
   --secondary-font-family: 'Cormorant Garamond', serif;
-  --nav-bg: #f8f9fa;
-  --special-text: #000;
+  --nav-bg: #252734;
+
+  color-scheme: light dark;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #334252;
+  --text-color: #FAFAFA;
+  --special-text: #858792;
+  --box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  --circle-border: rgba(255, 255, 255, 0.25);
+}
+
+:root[data-theme="light"] {
+  --background-color: #FAFAFA;
+  --text-color: #334252;
+  --special-text: #858792;
   --box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.6);
   --circle-border: rgba(0, 0, 0, 0.25);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 a {
@@ -31,15 +53,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -74,41 +87,6 @@ h1 {
 
 .highlight {
   font-weight: bold;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #858792;
-    background-color: #2a2c39;
-    --nav-bg: #252734;
-    --special-text: #fff;
-    --box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
-    --circle-border: rgba(255, 255, 255, 0.25);
-  }
-
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 @media screen and (min-width: 600px) {

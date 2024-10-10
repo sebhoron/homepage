@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { useEffect, useRef } from 'react';
 
 import './HomePage.css'
+
 import { Card } from '../../card/Card';
 import { cards } from '../../../utils/Data';
 
@@ -68,7 +69,7 @@ export function HomePage() {
         </div>
         <div className='hero-section__right'>
           <div className='hero-section__image'>
-            <img src='./dev.png' alt='hero image' />
+            <img src='/homepage/dev.png' alt='hero image' />
             <div className='hero-section__image-half-round-shape'></div>
             <div className='social-links'>
               <a href=''>

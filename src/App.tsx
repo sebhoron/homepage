@@ -1,6 +1,7 @@
 import {
   createHashRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -11,25 +12,34 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { SpinnerAtom } from "./components/atoms/SpinnerAtom";
 import { Header } from "./components/organisms/Header/HeaderOrganism";
 import { HomePage } from "./components/pages/HomePage/HomePage";
+import { PortfolioPage } from "./components/pages/PortfolioPage";
+import { ErrorBoundary } from "./utils/ErrorBoundary";
 
 const router = createHashRouter(
   createRoutesFromElements(
-    <Route path="/" element={<HomePage />}>
-      <Route path="portfolio" lazy={() => import("./components/pages/PortfolioPage")} />
+    <Route element={<NavbarWrapper />} errorElement={<ErrorBoundary />}>
+      <Route index element={<HomePage />} />
+      <Route path="portfolio" element={<PortfolioPage />} />
     </Route>
   )
 );
 
+function NavbarWrapper() {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  )
+};
+
 export default function App() {
   return (
-    <div className='app'>
-      <Header />
-      <ThemeProvider>
-        <RouterProvider
-          fallbackElement={<SpinnerAtom />}
-          router={router}
-        />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider>
+      <RouterProvider
+        fallbackElement={<SpinnerAtom />}
+        router={router}
+      />
+    </ThemeProvider>
   )
 }
