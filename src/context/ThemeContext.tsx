@@ -2,17 +2,6 @@ import { createContext, useEffect, useState, ReactNode } from 'react';
 
 type ThemeName = 'light' | 'dark';
 
-export const Themes = {
-	light: {
-		foreground: '#334252',
-		background: '#FAFAFA',
-	},
-	dark: {
-		foreground: '#FAFAFA',
-		background: '#334252',
-	},
-};
-
 interface ThemeContextProps {
 	theme: ThemeName;
 	toggleTheme: () => void;
