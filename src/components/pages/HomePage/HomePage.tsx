@@ -9,6 +9,7 @@ import './home-page.css'
 import { Card } from '../../molecules/Card/Card';
 import { cards } from '../../../utils/Data';
 import { Footer } from '../../organisms/Footer/Footer';
+import dev from '../../../assets/dev.png'
 
 export function HomePage() {
   return (
@@ -26,7 +27,7 @@ export function HomePage() {
         </div>
         <div className='hero-section__right'>
           <div className='hero-section__image'>
-            <img src='/homepage/dev.png' alt='hero image' />
+            <img src={dev} alt='hero image' />
             <div className='hero-section__image-half-round-shape'></div>
             <div className='social-links'>
               <a href=''>
