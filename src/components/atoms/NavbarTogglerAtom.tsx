@@ -4,9 +4,13 @@ type Props = {
   className?: string;
   label?: string;
   type?: "button" | "submit" | "reset";
-}
+};
 
-export const NavbarTogglerAtom: React.FC<Props> = ({ className = "navbar-toggler", label = "Toggle navigation", type = "button", }) => {
+export const NavbarTogglerAtom: React.FC<Props> = ({
+  className = "navbar-toggler",
+  label = "Toggle navigation",
+  type = "button",
+}) => {
   return (
     <button
       type={type}

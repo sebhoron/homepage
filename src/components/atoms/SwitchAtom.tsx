@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import Switch from 'react-switch';
+import React, { useContext } from "react";
+import Switch from "react-switch";
 import { PiMoonStarsFill } from "react-icons/pi";
 import { HiOutlineSun } from "react-icons/hi2";
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from "../../context/ThemeContext";
 
 export const SwitchAtom: React.FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  console.log('current theme:', theme)
+  console.log("current theme:", theme);
 
   return (
     <Switch
-      checked={theme === 'dark'}
+      checked={theme === "dark"}
       onChange={toggleTheme}
       onColor="#86d3ff"
       onHandleColor="#2693e6"
@@ -24,4 +24,4 @@ export const SwitchAtom: React.FC = () => {
       width={48}
     />
   );
-}
+};

@@ -4,9 +4,13 @@ type Props = {
   videoId: string;
   width?: string;
   height?: string;
-}
+};
 
-export const YouTubeIFrameAtom: React.FC<Props> = ({ videoId = "watch?v=LLFhKaqnWwk", width = "560", height = "315" }) => {
+export const YouTubeIFrameAtom: React.FC<Props> = ({
+  videoId = "watch?v=LLFhKaqnWwk",
+  width = "560",
+  height = "315",
+}) => {
   return (
     <iframe
       className="embed-responsive-item"
