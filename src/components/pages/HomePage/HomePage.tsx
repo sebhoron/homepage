@@ -1,15 +1,14 @@
-import { FaCode, FaPlay } from 'react-icons/fa';
+import { FaCode } from 'react-icons/fa';
 import { DiStreamline } from "react-icons/di";
 import { RiRobot2Line } from "react-icons/ri";
 import { IoIosCloudOutline } from "react-icons/io";
 import { v4 as uuid } from 'uuid';
 
-import './HomePage.css'
+import './home-page.css'
 
-import { Card } from '../../card/Card';
+import { Card } from '../../molecules/Card/Card';
 import { cards } from '../../../utils/Data';
-
-import Contact from '../../contact/Contact';
+import { Footer } from '../../organisms/Footer/Footer';
 
 export function HomePage() {
   return (
@@ -23,14 +22,6 @@ export function HomePage() {
             <h3>
               Full Stack Developer <br /> Java, Python, TypeScript and React
             </h3>
-          </div>
-          <div className='video-link'>
-            <div className='link'>
-              <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>
-                <FaPlay />
-              </a>
-            </div>
-            <span>Video Link</span>
           </div>
         </div>
         <div className='hero-section__right'>
@@ -84,7 +75,7 @@ export function HomePage() {
       <div className='contact' id='contact'>
         <h2 className=' section__title'>Connect</h2>
 
-        <Contact />
+        <Footer />
       </div>
     </div>
   );
